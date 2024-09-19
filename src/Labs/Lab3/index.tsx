@@ -1,3 +1,7 @@
-export default function Labs() {
-    return <h2>My Lab3</h2>;
-  }
+export default function Lab3() {
+  return (
+    <div>
+      <h2>Lab 3</h2>
+    </div>
+  );
+}
