@@ -1,6 +1,12 @@
+import { useParams } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import * as db from "../../Database";
 
 export default function AssignmentEditor() {
+  const { cid: courseId, aid: assignmentId } = useParams();
+  const { assignments } = db;
+  const assignment = assignments.find(a => a.course === courseId && a._id === assignmentId);
+
   return (
     <div id="wd-assignments-editor" className="container mt-4">
       {/* Assignment Name */}
@@ -8,7 +14,7 @@ export default function AssignmentEditor() {
         <label htmlFor="wd-name" className="form-label">Assignment Name</label>
         <input
           id="wd-name"
-          value="A1"
+          value={assignment?.title}
           className="form-control"
         />
       </div>

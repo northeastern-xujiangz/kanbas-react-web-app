@@ -1,62 +1,33 @@
-import { Link } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
+
 export default function CoursesNavigation() {
+  const { cid } = useParams();
+  const { pathname } = useLocation();
+
+  const links = [
+    "Home",
+    "Modules",
+    "Piazza",
+    "Zoom",
+    "Assignments",
+    "Quizzes",
+    "Grades",
+    "People",
+  ];
+
   return (
     <div className="wd list-group rounded-0" id="wd-courses-navigation">
-      <Link
-        className="list-group-item active border-0"
-        to="/Kanbas/Courses/1234/Home"
-      >
-        Home
-      </Link>
-
-      <Link
-        className="list-group-item  border-0 text-danger"
-        to="/Kanbas/Courses/1234/Modules"
-      >
-        Modules
-      </Link>
-
-      <Link
-        className="list-group-item border-0 text-danger"
-        to="/Kanbas/Courses/1234/Piazza"
-      >
-        Piazza
-      </Link>
-
-      <Link
-        className="list-group-item border-0 text-danger"
-        to="/Kanbas/Courses/1234/Zoom"
-      >
-        Zoom
-      </Link>
-
-      <Link
-        className="list-group-item border-0 text-danger"
-        to="/Kanbas/Courses/1234/Assignments"
-      >
-        Assignments
-      </Link>
-
-      <Link
-        className="list-group-item border-0 text-danger"
-        to="/Kanbas/Courses/1234/Quizzes"
-      >
-        Quizzes
-      </Link>
-
-      <Link
-        className="list-group-item border-0 text-danger"
-        to="/Kanbas/Courses/1234/Grades"
-      >
-        Grades
-      </Link>
-
-      <Link
-        className="list-group-item border-0 text-danger"
-        to="/Kanbas/Courses/1234/People"
-      >
-        People
-      </Link>
+      {links.map((link) => (
+        <Link
+          key={link}
+          to={`/Kanbas/Courses/${cid}/${link}`}
+          className={`list-group-item border-0 text-center ${
+            pathname.includes(link) ? "active text-danger bg-white" : "text-black"
+          }`}
+        >
+          {link}
+        </Link>
+      ))}
     </div>
   );
 }

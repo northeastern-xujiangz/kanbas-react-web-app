@@ -1,8 +1,14 @@
+import { useParams } from 'react-router-dom';
 import { FaPlus } from "react-icons/fa";
 import { MdMoreVert, MdAssignmentAdd } from "react-icons/md";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import * as db from "../../Database";
 
 export default function Assignments() {
+    const { cid: courseId } = useParams();
+    const { assignments } = db;
+    const courseAssignments = assignments.filter(a => a.course === courseId);
+
     return (
         <div id="wd-assignments" className="container mt-4">
             {/* Search bar and buttons */}
@@ -48,74 +54,29 @@ export default function Assignments() {
 
             {/* Assignment List */}
             <ul id="wd-assignment-list" className="list-group">
-                {/* A1 Assignment */}
-                <li className="list-group-item d-flex justify-content-between align-items-start">
-                    <div className="d-flex align-items-center">
-                        <MdAssignmentAdd className="me-3" style={{ fontSize: '24px' }} />
-                        <div>
-                            <a
-                                className="wd-assignment-link"
-                                href="#/Kanbas/Courses/1234/Assignments/123"
-                                style={{ color: 'blue' }}
-                            >
-                                A1 - ENV + HTML
-                            </a>
-                            <div>Multiple Modules | Not available until May 6 at 12:00am | Due May 13 at 11:59pm</div>
+                {courseAssignments.map(assignment => (
+                    <li key={assignment._id} className="list-group-item d-flex justify-content-between align-items-start">
+                        <div className="d-flex align-items-center">
+                            <MdAssignmentAdd className="me-3" style={{ fontSize: '24px' }} />
+                            <div>
+                                <a
+                                    className="wd-assignment-link"
+                                    href={`#/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
+                                    style={{ color: 'blue' }}
+                                >
+                                    {assignment.title}
+                                </a>
+                                <div>Multiple Modules | Not available until May 6 at 12:00am | Due May 13 at 11:59pm</div>
+                            </div>
                         </div>
-                    </div>
-                    <div className="d-flex align-items-center">
-                        <div className="border-start border-success ps-3 me-2 d-flex align-items-center">
-                            100 pts
+                        <div className="d-flex align-items-center">
+                            <div className="border-start border-success ps-3 me-2 d-flex align-items-center">
+                                100 pts
+                            </div>
+                            <MdMoreVert />
                         </div>
-                        <MdMoreVert />
-                    </div>
-                </li>
-
-                {/* A2 Assignment */}
-                <li className="list-group-item d-flex justify-content-between align-items-start">
-                    <div className="d-flex align-items-center">
-                        <MdAssignmentAdd className="me-3" style={{ fontSize: '24px' }} />
-                        <div>
-                            <a
-                                className="wd-assignment-link"
-                                href="#/Kanbas/Courses/1234/Assignments/124"
-                                style={{ color: 'blue' }}
-                            >
-                                A2 - CSS + BOOTSTRAP
-                            </a>
-                            <div>Multiple Modules | Not available until May 13 at 12:00am | Due May 20 at 11:59pm</div>
-                        </div>
-                    </div>
-                    <div className="d-flex align-items-center">
-                        <div className="border-start border-success ps-3 me-2 d-flex align-items-center">
-                            100 pts
-                        </div>
-                        <MdMoreVert />
-                    </div>
-                </li>
-
-                {/* A3 Assignment */}
-                <li className="list-group-item d-flex justify-content-between align-items-start">
-                    <div className="d-flex align-items-center">
-                        <MdAssignmentAdd className="me-3" style={{ fontSize: '24px' }} />
-                        <div>
-                            <a
-                                className="wd-assignment-link"
-                                href="#/Kanbas/Courses/1234/Assignments/125"
-                                style={{ color: 'blue' }}
-                            >
-                                A3 - JAVASCRIPT + REACT
-                            </a>
-                            <div>Multiple Modules | Not available until May 20 at 12:00am | Due May 27 at 11:59pm</div>
-                        </div>
-                    </div>
-                    <div className="d-flex align-items-center">
-                        <div className="border-start border-success ps-3 me-2 d-flex align-items-center">
-                            100 pts
-                        </div>
-                        <MdMoreVert />
-                    </div>
-                </li>
+                    </li>
+                ))}
             </ul>
         </div>
     );
