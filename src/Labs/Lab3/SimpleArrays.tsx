@@ -17,5 +17,6 @@ export default function SimpleArrays() {
         <ol>{htmlArray1}</ol>
         <hr />
       </div>
-  );}
+    );
+}
   

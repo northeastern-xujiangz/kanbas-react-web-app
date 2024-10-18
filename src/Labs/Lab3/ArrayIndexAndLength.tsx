@@ -8,5 +8,5 @@ export default function ArrayIndexAndLength() {
         length1 = {length1} <br />
         index1 = {index1}   <hr />
       </div>
-  );}
+);}
   

@@ -16,5 +16,6 @@ export default function MapFunction() {
           ))}
         </ol> <hr/>
       </div>
-  );}
+    );
+}
   

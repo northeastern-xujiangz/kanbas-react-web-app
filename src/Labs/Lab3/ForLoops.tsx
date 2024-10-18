@@ -7,8 +7,8 @@ export default function ForLoops() {
     }
     return (
       <div id="wd-for-loops">
-        <h4>For Loops</h4>
+        <h4>Looping through arrays</h4>
         stringArray2 = {stringArray2} <hr />
       </div>
-  );}
+);}
   

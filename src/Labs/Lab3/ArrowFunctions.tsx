@@ -10,5 +10,5 @@ const subtract = (a: number, b: number) => {
         threeMinusOne = {threeMinusOne}   <br />
         subtract(3, 1) = {subtract(3, 1)} <hr />
       </div>
-  );}
+);}
   
