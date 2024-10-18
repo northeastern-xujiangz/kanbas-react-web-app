@@ -27,6 +27,9 @@ export default function Dashboard() {
           ))}
         </div>
       </div>
-    </div>
-  );
-}
+    </div>);}
+
+
+
+
+//Optional: refactor the courses.json and/or the Dashboard component so that at least 3 courses have a different image.

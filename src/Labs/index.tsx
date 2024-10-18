@@ -7,8 +7,7 @@ export default function Labs() {
   return (
     <div>
       <h1>Jiangzhe Xu</h1>
-      <h3>NUID:</h3>
-      <a id="wd-github" href="https://github.com/northeastern-xujiangz/kanbas-react-web-app/tree/main">https://github.com/northeastern-xujiangz/kanbas-react-web-app/tree/main</a><br/>
+      <h2>NUID: 002608893</h2>
       <h1>Labs</h1>
       <TOC />
       <Routes>

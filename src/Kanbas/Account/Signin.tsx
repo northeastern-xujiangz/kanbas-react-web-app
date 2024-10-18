@@ -10,7 +10,7 @@ export default function Signin() {
              placeholder="password" type="password"
              className="form-control mb-2"/>
       <Link id="wd-signin-btn"
-            to="/Kanbas/Dashboard"
+            to="/Kanbas/Account/Profile"
             className="btn btn-primary w-100">
             Sign in </Link>
       <Link id="wd-signup-link" to="/Kanbas/Account/Signup">Sign up</Link>
