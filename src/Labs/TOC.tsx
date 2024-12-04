@@ -33,13 +33,34 @@ export default function TOC() {
         </a>
       </li>
       <li className="nav-item">
-        <a id="wd-k" href="#/Kanbas" className="nav-link">
+        <a id="wd-a5" href="#/Labs/Lab5"
+          className={`nav-link ${pathname.includes("Lab5") ? "active" : ""}`}>
+          Lab 5
+        </a>
+      </li>
+      <li className="nav-item">
+        <a id="wd-kanbas" href="#/Kanbas" className="nav-link">
           Kanbas
         </a>
       </li>
       <li className="nav-item">
-        <a id="wd-k" href="https://github.com/northeastern-xujiangz/kanbas-react-web-app/tree/main" className="nav-link">
+        <a id="wd-github" href="https://github.com/1tou" className="nav-link">
           My GitHub
+        </a>
+      </li>
+      <li className="nav-item">
+        <a id="wd-client" href="https://github.com/northeastern-xujiangz/kanbas-react-web-app" className="nav-link">
+          kanbas-react-web-app.git
+        </a>
+      </li>
+      <li className="nav-item">
+        <a id="wd-server" href="https://github.com/northeastern-xujiangz/kanbas-node-server-app" className="nav-link">
+          kanbas-node-server-app.git
+        </a>
+      </li>
+      <li className="nav-item">
+        <a id="wd-remote-server" href="https://kanbas-node-server-app-po9w.onrender.com" className="nav-link">
+          Remote Server Url
         </a>
       </li>
     </ul>
