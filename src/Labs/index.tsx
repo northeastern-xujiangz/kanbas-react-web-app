@@ -11,7 +11,7 @@ export default function Labs() {
   return (
     <Provider store={store}>
       <div className="container-fluid">
-        <h1>Shengmin Chen</h1>
+        <h1>Jiangzhe Xu</h1>
         <h5>Github Repository ( kanbas-react-web-app ) :</h5>
         <a id="wd-github-client" href="https://github.com/northeastern-xujiangz/kanbas-react-web-app"><h5>https://github.com/northeastern-xujiangz/kanbas-react-web-app</h5></a><br/>
         <h5>Github Repository ( kanbas-node-server-app ) :</h5>
