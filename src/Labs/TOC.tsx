@@ -44,7 +44,7 @@ export default function TOC() {
         </a>
       </li>
       <li className="nav-item">
-        <a id="wd-github" href="https://github.com/1tou" className="nav-link">
+        <a id="wd-github" href="https://github.com/northeastern-xujiangz" className="nav-link">
           My GitHub
         </a>
       </li>
@@ -59,7 +59,7 @@ export default function TOC() {
         </a>
       </li>
       <li className="nav-item">
-        <a id="wd-remote-server" href="https://kanbas-node-server-app-po9w.onrender.com" className="nav-link">
+        <a id="wd-remote-server" href="https://kanbas-node-server-app-mongodb-vl38.onrender.com" className="nav-link">
           Remote Server Url
         </a>
       </li>
